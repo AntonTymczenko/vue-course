@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>VueJS</title>
+  <script src="vue.js" charset="utf-8"></script>
+</head>
+<body>
+<div id="exercise">
+    <p>VueJS is pretty cool - {{name}} ({{age}})</p>
+    <p>age * 3 = {{ age * 3 }}</p>
+    <p>from 1 to 100 random: {{ rand() }}</p>
+    <div>
+        <img style="width:100px;height:100px" v-bind:src="i">
+    </div>
+    <div>
+        <input type="text" v-bind:value="name">
+    </div>
+</div>
+<script>
+  new Vue({
+    el: '#exercise',
+    data: {
+      name: 'Anton',
+      age: 29,
+      i: 'http://www.cats.org.uk/uploads/images/featurebox_sidebar_kids/grief-and-loss.jpg'
+    },
+    methods: {
+      rand: () => {
+        return Math.ceil(Math.random()*100)
+      }
+    }
+  })
+</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>VueJS</title>
+  <script src="vue.js" charset="utf-8"></script>
+</head>
+<body>
+<div id="exercise">
+  <div>
+    <button @click="show = !show">Toggle</button>
+    <p v-if="show">You either see me ...</p>
+    <p v-else>...or me</p>
+    <p v-show="show">You either see me ...</p>
+    <p v-show="!show">...or me</p>
+  </div>
+  <hr>
+  <ul v-for="(el, index) in array">
+    <li>[{{index}}] {{el}}</li>
+  </ul>
+  <hr>
+  <ul v-for="(value, key, index) in myObject">
+    <li>{{key}}: {{value}} ({{index}})</li>
+  </ul>
+  <hr>
+  <ul v-for="v in testData">
+    <li v-if="Array.isArray(v)">
+      <ul v-for="i in v">
+        <li>{{i}}</li>
+      </ul>
+    </li>
+    <li v-else>{{ v }}</li>
+  </ul>
+</div>
+
+<script>
+new Vue({
+  el: '#exercise',
+  data: {
+    array: ['Max', 'Anna', 'Chris', 'Manu'],
+    myObject: {
+      title: 'Lord of the Rings',
+      author: 'J.R.R. Tolkien',
+      books: '3'
+    },
+    testData: {
+      name: 'TESTOBJECT',
+      id: 10,
+      data: [1.67, 1.33, 0.98, 2.21]
+    },
+    show: true
+  }
+});
+</script>
+</body>
+</html>

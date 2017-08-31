@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>VueJS Instances</title>
+  <script src="vue.js" charset="utf-8"></script>
+</head>
+<body>
+<div id="app1">
+  <h1>{{title}}</h1>
+</div>
+<div id="app2">
+  <h1>{{title}}</h1>
+  <button @click="onClick">click me</button>
+</div>
+<script>
+let vm1 = new Vue ({
+  el: '#app1',
+  data: {
+    title: 'App 1'
+  }
+})
+
+setTimeout(() => {
+  vm1.title = 'changed by timer'
+}, 2000)
+
+let vm2 = new Vue ({
+  el: '#app2',
+  data: {
+    title: 'App 2'
+  },
+  methods: {
+    onClick () {
+      vm1.title = 'I haked you'
+    }
+  }
+})
+</script>
+</body>
+</html>

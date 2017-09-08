@@ -106,5 +106,6 @@ export default {
 
 <style>
 .main { padding: 30px;}
+.card-header { font-weight: 700;}
 .variant { margin: 10px; padding: 10px 20px; }
 </style>

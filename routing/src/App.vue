@@ -16,16 +16,7 @@ export default {
   data () {
     return {
     }
-  },
-  methods: {
-  },
-  created (){
-    this.resource = this.$resource('', {}, {
-      save: {method: 'POST', url: 'user'},
-      get: {url: 'users'}
-    })
-  }
-}
+  }}
 </script>
 
 <style lang="sass">

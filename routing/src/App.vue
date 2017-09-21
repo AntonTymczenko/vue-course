@@ -1,17 +1,18 @@
 <template>
 <div class="container">
-  <h1 class="text-center main">Vue-resource</h1>
+  <h1 class="text-center main">Routing</h1>
   <hr>
-  <div class="row text-center">
-    <div class="col-xs-6 mx-auto">
-
-    </div>
-  </div>
+  <app-header></app-header>
+  <router-view></router-view>
 </div>
 </template>
 
 <script>
+import Header from './components/Header.vue'
 export default {
+  components: {
+    appHeader: Header
+  },
   data () {
     return {
     }
@@ -28,8 +29,4 @@ export default {
 </script>
 
 <style lang="sass">
-.form-group label
-  font-weight: bold
-  float: left
-
 </style>
